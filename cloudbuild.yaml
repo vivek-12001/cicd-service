@@ -1,8 +1,4 @@
 steps:
-#First Clone from Google Cloud Source Repository  
-- name: 'gcr.io/cloud-builders/git'
-  args: ['clone','https://source.developers.google.com/p/${_PROJECT}/r/${_REPO_NAME}']
-
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build','-t','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}','.']
@@ -24,7 +20,7 @@ steps:
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
-    _PROJECT: My Project 7350
+    _PROJECT: silent-service-321315
     _ZONE: us-central1-a
     _GKE_CLUSTER: vivek
     
