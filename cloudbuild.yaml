@@ -15,13 +15,13 @@ steps:
   - 'deployment/${_DEPLOYMENTNAME}'
   - '${_CONTAINERNAME}=gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}'
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=${_REGION}'
+  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
     _PROJECT: silent-service-321315
-    _REGION: us-central1
+    _ZONE: us-central1
     _GKE_CLUSTER: vivek
     
     #Repository Specific configuration. DevOps can change this settings
